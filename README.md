@@ -7,7 +7,7 @@ Step 1 : To clone the repository, use the following command:
 ```
 git clone https://github.com/HammadMomin/Autometa-Web-App.git
 ```
-Step 2 : Go to project directory folder and run this Command. This Command May Not Work if your Machine does not have Node. First install it from  https://nodejs.org/en/download. Add ‪C:\Program Files\nodejs\npm to your System Environment Variables Inside The Path. Now, you are Good to Run this Command 
+Step 2 : Go to project directory folder and run this Command. This Command May Not Work if your Machine does not have Node. First install it from  https://nodejs.org/en/download.  Add ‪C:\Program Files\nodejs\npm to your System Environment Variables Inside The Path. Now, you are Good to Run this Command 
 
 ```
 npm i install
