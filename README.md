@@ -19,5 +19,5 @@ Step 3 : Finally to Run This Web Application. Run the Following Command given Be
 ```
 npm run dev
 ```
-This Will Run The Web Application on localhost:5000
+This will Run The Web Application on localhost:5000
 
