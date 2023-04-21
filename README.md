@@ -34,6 +34,5 @@ After Installing Both, You Need To run the Flask Server And NodeJs Server Simult
 ## Complete Flowchart Below For The Exact Understanding Of the Project 
 
 ![FC-Autometa (Github)](https://user-images.githubusercontent.com/99894207/233685556-2f4782c5-2c23-4a03-bfb5-204ee43b6787.png)
-
-                                         This text is <em><strong>really important</strong></em>.
+<em> Fig - Flowchart of Web Application
 
