@@ -14,5 +14,10 @@ npm i install
 ```
 This Above Command Will Install the node_modules. 
 
-Step 3 : 
+Step 3 : Finally to Run This Web Application. Run the Following Command given Below
+
+```
+npm run dev
+```
+This Will Run The Web Application on localhost:5000
 
