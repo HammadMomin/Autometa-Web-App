@@ -25,6 +25,6 @@ This will Run The Web Application on localhost:5000
 
 
 <ins>**NOTE:**</ins> This Application Allows to Signup, Login, Choose File and  Upload .pdf/.doc/.txt files and Also allows User to Fire a Query with reference to document Uploaded by the user. For The Summarization Part You Need to Make Another Setup From where the NLP Model Is Running Locally on Flask Server using Papermill Library 
-For More Info Just Head Over to this repository and Install it by refering To its Respective README file. 
+For More Info Just Head Over to this repository and Install it by refering To its Respective README file. > https://github.com/HammadMomin/Autometa-FlaskApp-NLP-Model.git
 
 After Installing Both, You Need To run the Flask Server And NodeJs Server Simultaneosly 
