@@ -21,7 +21,7 @@ npm run dev
 ```
 This will Run The Web Application on localhost:5000
 
-NOTE : This Application Allows to Signup, Login, Choose File and  Upload .pdf/.doc/.txt files and Also allows User to Fire a Query with reference to document Uploaded by the user. For The Summarization Part You Need to Make Another Setup From where the NLP Model Is Running Locally on Flask Server using Papermill Library 
+**NOTE :** This Application Allows to Signup, Login, Choose File and  Upload .pdf/.doc/.txt files and Also allows User to Fire a Query with reference to document Uploaded by the user. For The Summarization Part You Need to Make Another Setup From where the NLP Model Is Running Locally on Flask Server using Papermill Library 
 For More Info Just Head Over to this repository and Install it by refering To its Respective README file. 
 
-After Installing Both, You d To run the Flask Server And NodeJs Server Simultaneosly 
+After Installing Both, You Need To run the Flask Server And NodeJs Server Simultaneosly 
