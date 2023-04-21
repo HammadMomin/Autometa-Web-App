@@ -42,7 +42,7 @@ After Installing Both, You Need To run the Flask Server And NodeJs Server Simult
 
 ## A Short Glimpse Of How This Application Gives Out Summarized Text From The Document Uploaded After Firing The Query !! 
 
-Uploading video_20230421_221754_edit.mp4…
+https://user-images.githubusercontent.com/99894207/233693769-0663f591-2f13-4758-aba9-1fb0fca2dfc3.mp4
 
 
 
