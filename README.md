@@ -37,5 +37,8 @@ After Installing Both, You Need To run the Flask Server And NodeJs Server Simult
 <p align="center">
 <em> Fig1 - Flowchart of Web Application</em>
 </p>
+
+----------------------------------------------------------------------------------------------------
+
                              
 
