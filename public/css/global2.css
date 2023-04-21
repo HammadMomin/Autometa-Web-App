@@ -1,0 +1,40 @@
+:root {
+  /* fonts */
+  --font-poppins: Poppins;
+  --font-inter: Inter;
+  --font-plus-jakarta-sans: "Plus Jakarta Sans";
+
+  /* font sizes */
+  --font-size-2xs: 12px;
+  --font-size-xs: 14px;
+  --font-size-sm: 15px;
+  --font-size-base: 16px;
+  --font-size-lg: 18.18px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 48px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-gray-100: #e9e9e9;
+  --gray-900: #18181b;
+  --color-black: #000;
+  --color-indigo: #6736c3;
+  --color-violet: #a366c7;
+
+  /* Gaps */
+  --gap-md: 18px;
+
+  /* Paddings */
+  --padding-3xs: 3px;
+  --padding-2xs: 6px;
+  --padding-xs: 15px;
+  --padding-sm: 26px;
+  --padding-md: 28px;
+  --padding-lg: 50px;
+  --padding-xl: 59px;
+  --padding-2xl: 69px;
+
+  /* border radiuses */
+  --br-sm: 20px;
+  --br-md: 24px;
+}

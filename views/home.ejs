@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Autometa Corporation Get Started</title>
+    <link rel="shortcut icon" href="images/logo.png">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="css/global2.css" />
+    <link rel="stylesheet" href="css/home.css"/>
+
+    
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus Jakarta Sans:wght@500;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    />
+  </head>
+  <body>
+    <article class="final-homepage" id="homepage">
+
+
+      <article class="nav-section" id="navbar">
+        <div class="frame-parent">
+          <div class="autometa-logo-parent" id="branding">
+            <img
+              class="autometa-logo-icon"
+              alt=""
+              src="images/screenshot-2022122407561321-40deb401b9ffe8e1df2f1cc5ba480b12-1@2x.png"
+            /><label class="autometa-corporation">Autometa Corporation</label>
+          </div>
+
+
+          <div class="makers-button-parent" id="navbotton">
+            <a class="makers-button" href=login><p class="button">Log In</p></a>
+            <a class="makers-button1" href=signup><p class="button1">Sign up</p></a>
+          </div> 
+        </div>
+      </article>
+
+ 
+
+
+      <article class="hero-section" id="hero">
+        <article class="frame-group" id="homesection1">
+          <article class="easy-solution-of-a-query-parent" id="homecontent">
+            <h1 class="easy-solution-of-container">
+              <span>EASY SOLUTION </span
+              ><span class="of-a-query">OF A QUERY</span>
+            </h1>
+            <!-- <h1 class="upload-documents-in">UPLOAD DOCUMENTS IN PDF FILE</h1> -->
+
+            <div class="container"> 
+              <span class="text first-text">UPLOAD DOCUMENTS IN</span>
+              <span class="text sec-text">PDF FILE</span>
+           </div> 
+        
+      
+          <script>
+              const text = document.querySelector(".sec-text");
+      
+              const textLoad = () => {
+                  setTimeout(() => {
+                      text.textContent = "PDF FILE";
+                  }, 0);
+                  setTimeout(() => {
+                      text.textContent = "WORD FILE";
+                  }, 4000);
+                  setTimeout(() => {
+                      text.textContent = "TEXT FILE";
+                  }, 8000); //1s = 1000 milliseconds
+              }
+      
+              textLoad();
+              setInterval(textLoad, 12000);
+          </script> 
+
+          <!--  -->
+
+          
+            <p class="consumed-so-much">
+              Consumed so much time reading long documents ? Not Now! Here, You
+              can upload your documents and it will summarize the documents
+              using NLP (Natural Language Processing Algorithm .So what you are
+              waiting for? Let’s Get Started !
+            </p>
+            <div class="get-started" data-animate-on-scroll>
+              <div class="users100">
+                <img class="users100-child" alt="" src="images/group-1.svg" />
+                <div class="users100-item"></div>
+                <div class="div">100+</div>
+              </div>
+              <!-- <form action="/login">
+              <button class="makers-button2" type="submit">
+                <div class="button2">Get Started</div>
+              </button>
+            </form> -->
+
+            <a href="/login" class="makers-button2">
+              <div class="button2">Get Started</div>
+            </a>
+            
+            </div>
+          </article>
+          <img
+            class="artworkfeature1-icon"
+            alt=""
+            src="images/artworkfeature1.svg"
+          />
+        </article>
+      </article>
+      <article class="process-section" id="features">
+        <div class="feature-content" data-animate-on-scroll>
+          <div class="text-container">
+            <div class="makers-text-content">
+              <a class="education">Process</a>
+              <h1 class="learn-how-to">How it Works</h1>
+              <div class="makers-is-a">
+                Makers is a Figma Plugin to help you build and publish sites
+                directly in Figma. No code required.
+              </div>
+            </div>
+          </div>
+          <div class="frame-container">
+            <div class="step-1-register-parent">
+              <h2 class="step-1-container">
+                <p class="step-1">Step 1 :</p>
+                <p class="register">Register</p>
+              </h2>
+              <h3 class="register-yourself-as-container">
+                <p class="register-yourself-as">Register yourself as a</p>
+                <p class="register">application user</p>
+              </h3>
+            </div>
+            <div class="step-2-upload-the-document-parent">
+              <h2 class="step-2-container">
+                <p class="step-1">Step 2 :</p>
+                <p class="register">Upload the Document</p>
+              </h2>
+              <h3 class="upload-the-document-container">
+                <p class="register-yourself-as">Upload the document in .pdf/</p>
+                <p class="register-yourself-as">
+                  .word/.txt files on which the NLP
+                </p>
+                <p class="register">Algorithm will be applied</p>
+              </h3>
+            </div>
+            <div class="step-3-get-summarized-output-parent">
+              <h2 class="step-3-container">
+                <p class="step-1">Step 3 :</p>
+                <p class="register">Get Summarized Output</p>
+              </h2>
+              <h3 class="fire-a-query-container">
+                <p class="register-yourself-as">
+                  Fire a query and get answer from
+                </p>
+                <p class="register">the summarized document</p>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </article>
+    </article>
+
+    <script>
+      var scrollAnimElements = document.querySelectorAll("[data-animate-on-scroll]");
+      var observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting || entry.intersectionRatio > 0) {
+              const targetElement = entry.target;
+              targetElement.classList.add("animate");
+              observer.unobserve(targetElement);
+            }
+          }
+        },
+        {
+          threshold: 0.15,
+        }
+      );
+      
+      for (let i = 0; i < scrollAnimElements.length; i++) {
+        observer.observe(scrollAnimElements[i]);
+      }
+      </script>
+  </body>
+</html>

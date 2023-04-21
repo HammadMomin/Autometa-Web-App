@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="css/verify-email.css" />
+<title>Verify Your Gmail Account | Autometa Corporation</title>
+<link rel="shortcut icon" href="images/logo.png">
+</head>
+<body>
+  <form method="post" action="/verify-email">
+  <div class="logo-position">
+  
+    <img src="images/logo.png" height="65px" width="65px">
+
+  </div>
+
+  <div class="container">
+    <h2>Verify Your Gmail Account</h2>
+    <p>
+      We emailed you the six digit verification code <br/>
+      on <b> <%= email %> </b> <br>
+      Enter the code below to verify your email address.
+    </p>
+    
+    <div class="code-container">
+      <input type="number" name="code" class="code" placeholder="0" min="0" max="9" required>
+      <input type="number" name="code" class="code" placeholder="0" min="0" max="9" required>
+      <input type="number" name="code" class="code" placeholder="0" min="0" max="9" required>
+      <input type="number" name="code" class="code" placeholder="0" min="0" max="9" required>
+      <input type="number" name="code" class="code" placeholder="0" min="0" max="9" required>
+      <input type="number" name="code" class="code" placeholder="0" min="0" max="9" required>
+    </div>
+    
+    
+    <div>
+      <div id="notification-toast" class="notification-toast"></div>
+      <button type="submit" class="btn btn-primary">Verify</button>
+    </div>
+   
+
+  </div>
+
+<script src="js/verify-email.js"></script>
+</form>
+<script>
+  const notificationContainer = document.getElementById('notification-toast');
+ 
+  const message = '<%= message %>';
+  const messageType ='<%= messageType %>';
+  
+  if (message) {
+    const notification = document.createElement('div');
+    notification.classList.add('notification', messageType);
+  
+    const icon = document.createElement('span');
+    icon.classList.add('notification-icon');
+    if (messageType === 'success') {
+      icon.innerHTML = '&#10003;'; // checkmark icon
+    } else if (messageType === 'error') {
+      icon.innerHTML = '&#10007;'; // cross icon
+    }
+    notification.appendChild(icon);
+  
+    const messageText = document.createElement('span');
+    messageText.innerText = message;
+    notification.appendChild(messageText);
+  
+    notificationContainer.appendChild(notification);
+  
+    setTimeout(() => {
+      notification.classList.remove('slide-up');
+      notification.classList.add('slide-down');
+      setTimeout(() => {
+        notificationContainer.removeChild(notification);
+      }, 300);
+    }, 5000);
+  }
+</script>
+</body>
+</html>

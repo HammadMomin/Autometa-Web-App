@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+$primary: #7754F6;
+$black: #000;
+$white: #fff;
+$body_color: #818181;
+$light: #d1d1d1;
+$font-family: 'Roboto', sans-serif;
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+body {
+    font-family: $font-family;
+    color: $body_color;
+    font-size: 15px;
+}
+
+a {
+    transition: .3s all ease;
+    color: $primary;
+    font-weight: 500;
+    text-decoration: none;
+    &:hover {
+        color: darken($primary, 5%);
+    }
+}
+
+.bg-img,
+.form-wrap {
+    height: 100vh;
+    min-height: 500px;
+}
+
+.bg-img {
+    left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    position: relative;
+    height: 200px;
+    min-height: 200px;
+    z-index: 2;
+    @media (min-width: $md) {
+        position: fixed;
+        width: 50%;
+        height: 100vh;
+    }
+    @media (min-width: $lg) {
+        position: fixed;
+        width: 50%;
+        height: 100vh;
+    }
+    @media (min-width: $xl) {
+        position: fixed;
+        width: 60%;
+        height: 100vh;
+    }
+}
+
+.form-wrap {
+    right: 0;
+    position: relative;
+    z-index: 1;
+    padding: 5%;
+    width: 100%;
+    background: $white;
+    height: 100%;
+    @media (min-width: $md) {
+        position: absolute;
+        width: 50%;
+    }
+    @media (min-width: $lg) {
+        position: absolute;
+        width: 50%;
+    }
+    @media (min-width: $xl) {
+        position: absolute;
+        width: 40%;
+    }
+
+    .title {
+        font-size: 50px;
+        color: $black;
+    }
+
+    .form-floating {
+        position: relative;
+        margin-bottom: 15px;
+        .form-control {
+            height: 60px!important;
+            border-radius: 10px!important;
+            &:active, &:focus {
+                outline: none;
+                box-shadow: none;
+                border-color: $primary;
+            }
+        }
+    }
+    .password-show-toggle {
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        z-index: 9;
+        span {
+            font-size: 20px;
+            &:before {
+                font-family: 'unicons-line';
+                content: "\ebf8";
+            }
+        }
+        &.active {
+            span {
+                &:before {
+                    content: "\ebaf";
+                }
+            }
+        }
+    }
+    .form-check {
+        margin-bottom: 30px;
+        .form-check-input {
+            border-color: $light!important;
+            &:checked {
+                background-color: $primary;
+                border-color: $primary!important;
+                outline: none;
+                box-shadow: none;
+            }
+            &:focus, &:active {
+                outline: none;
+                box-shadow: none;
+            }
+        }
+    }
+    .btn-primary {
+        border-radius: 10px;
+        background-color: $primary;
+        border-color: $primary;
+        height: 60px;
+        font-weight: 500;
+        box-shadow: 0 15px 30px -7px rgba($primary, .5);
+        transition: .3s all ease;
+        font-size: 18px;
+        &:hover {
+            background-color: darken($primary, 5%);
+            border-color: darken($primary, 5%);
+        }
+    }
+    .social-account-wrap {
+        padding-top: 30px;
+        padding-bottom: 50px;
+        h4 {
+            text-align: center;
+            font-size: 14px;
+            font-weight: normal;
+            position: relative;
+            span {
+                z-index: 1;
+                display: inline-block;
+                padding-left: 20px;
+                padding-right: 20px;
+                background: $white;
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                width: 100%;
+                height: 1px;
+                background-color: $light;
+                z-index: -1;
+            }
+        }
+        .social-account {
+            li {
+                width: calc(25% - 0);
+                a {
+                    display: inline-block;
+                    border: 1px solid $light;
+                    padding: 10px;
+                    border-radius: 10%;
+                    &:hover {
+                        border-color: darken($light, 8%);
+                    }
+                }
+            }
+        }
+    }
+}
+

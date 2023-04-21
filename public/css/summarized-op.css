@@ -1,0 +1,130 @@
+/* Import Roboto font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+/* Set box-sizing property for all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  background-color: #ffffff;
+  font-family: "Lato", sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* Logo positioning */
+.logo-position {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 32px;
+}
+
+/* Container styling */
+.container {
+  background-color: rgba(172, 168, 168, 0.3);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 1000px;
+  text-align: center;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+/* Query results styling */
+#query-results {
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+/* Responsive media queries */
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  input[type="text"] {
+    width: 80%;
+  }
+}
+
+
+/* typwritter text animation */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+.typewriter-container {
+    background-color: black;
+    color: white;
+    font-family: "Lato", sans-serif;
+    padding: 10px;
+    margin: auto;
+    width: 80%;
+    height: auto;
+    min-height: 50px;
+    max-height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-y: auto;
+    border-radius: 10px;
+    line-height: 1.5; /* Add this line */
+  }
+  
+  .typewriter-content {
+    width: 100%;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    line-height: 1.2;
+    animation: typewriter 4s steps(30) 1s 1 normal both;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+   
+  /* RETURN HOME BUTTON  */
+  .btns{
+    margin: 25px 0;
+    display: inline-flex;
+  }
+  .btns a{
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    border: 2px solid #6736c3;
+    color: #6736c3;
+    font-weight: 500;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+  .btns a:hover{
+    background: #6736c3;
+    color: #fff;
+  }

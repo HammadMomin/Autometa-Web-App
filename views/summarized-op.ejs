@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="/css/summarized-op.css"/>
+<link rel="stylesheet" href="/css/welcome.css"/>
+<title>Summarized Output | Autometa Corporation</title>
+<link rel="shortcut icon" href="images/logo.png">
+</head>
+<body>
+  <div class="logo-position">
+    <img src="images/logo.png" height="65px" width="65px">
+  </div>
+  
+  
+  
+  <div class="container">
+    <h1>Summarized Output</h1> 
+    <form>
+      <p> <b><u>Your Query</u> :</b> <%= USERQUERY %> </p>
+      <br>
+
+  
+
+      <div class="typewriter-container">
+        <p class="typewriter-text" id="typewriter"><%= output %></p>
+      </div>
+
+    </form>
+    
+    <p id="query-results">Results of Your Query Are Displayed Here.</p>
+   
+    <div class="btns">
+      <a href="/home">return home</a>
+      
+   </div>
+  </div>
+
+
+
+  
+  <script src="/js/query.js"></script>
+
+  <script>
+    const text = document.getElementById('typewriter').innerHTML;
+document.getElementById('typewriter').innerHTML = '';
+
+let i = 0;
+const typing = setInterval(() => {
+  document.getElementById('typewriter').innerHTML += text.charAt(i);
+  i++;
+  if (i >= text.length) {
+    clearInterval(typing);
+  }
+}, 50);
+  </script> 
+
+</body>
+</html>
+
