@@ -44,6 +44,12 @@ After Installing Both, You Need To run the Flask Server And NodeJs Server Simult
 
 https://user-images.githubusercontent.com/99894207/233699100-b62d63f9-4db6-4e26-a688-99af74dbc0d2.mp4
 
+-----------------------------------------------------------------------------------------------------------------------------
+### Points To Be Keep in Mind While Running The Web Application 
+
+1. You Cannot Fire a Query and Submit, Before You have Click Upload Button. (Doing This Doesn't Show the output)
+2. Choose File >> Click Upload >> Write A Query >> Click Submit. (Always Go With This Flow)
+
 ------------------------------------------------------------------------------------------------------------------------------
 If You May Have Any Queries, You Can Reach me Out At `mohdhammad.momin@gmail.com`
 
