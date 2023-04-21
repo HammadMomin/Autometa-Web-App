@@ -617,7 +617,7 @@ router.post("/home", async (req, res) => {
       //  console.log(updatedDocument)
 
        const document_database = await Document.findOne({ _id:sharedDocument_id });
-       console.log(document_database)
+       
 
        //////////////////////////////////////////////////////////////////////////////////////
 
@@ -636,7 +636,7 @@ router.post("/home", async (req, res) => {
         throw err;
       }
       pdfText = data;
-      console.log(pdfText);
+      // console.log(pdfText);
 
 //////////////// axios request for pdf 
 
@@ -651,13 +651,13 @@ router.post("/home", async (req, res) => {
       axios.post('http://127.0.0.1:5000/', data_model)
         .then(response => {
           
-          console.log(response.data);
+          // console.log(response.data);
           summarized_variable = response.data;
 
           if(summarized_variable){
             res.redirect('/summarized-output');
             }
-          console.log(summarized_variable)
+            console.log("Summarized Output Shown at Frontend")
 
         })
         .catch(error => {
@@ -684,7 +684,7 @@ router.post("/home", async (req, res) => {
     // handle the promise returned by the extract method and save the extracted text to a variable
     extracted.then(function(doc) {
       const extractedText = doc.getBody();
-      console.log(extractedText);
+      // console.log(extractedText);
 
 ///////////////////// axios req for 'docx' and 'doc'
 
@@ -696,13 +696,13 @@ const data_model = {
 
 axios.post('http://127.0.0.1:5000/', data_model)
   .then(response => {
-    console.log(response.data);
+    // console.log(response.data);
     summarized_variable = response.data;
 
           if(summarized_variable){
             res.redirect('/summarized-output');
             }
-          console.log(summarized_variable)
+            console.log("Summarized Output Shown at Frontend")
   })
   .catch(error => {
     console.error("Failure " + error);
@@ -718,7 +718,7 @@ axios.post('http://127.0.0.1:5000/', data_model)
   else if (extension === 'txt') {
     fs.readFile(filePath, 'utf-8', function (err, txt_data) {
       if (err) return next(err);
-      console.log(txt_data);
+      // console.log(txt_data);
 
       /////////// axios req for txt 
 
@@ -730,13 +730,14 @@ const data_model = {
 
 axios.post('http://127.0.0.1:5000/',data_model)
   .then(response => {
-    console.log(response.data);
+    // console.log(response.data);
     summarized_variable = response.data;
 
           if(summarized_variable){
             res.redirect('/summarized-output');
             }
-          console.log(summarized_variable)
+            
+          console.log("Summarized Output Shown at Frontend")
   })
   .catch(error => {
     console.error("Failure " + error);
@@ -752,7 +753,7 @@ axios.post('http://127.0.0.1:5000/',data_model)
 // }
 
 
-
+      console.log("")
       console.log("Query Fired And Saved in Database");
      
        }
