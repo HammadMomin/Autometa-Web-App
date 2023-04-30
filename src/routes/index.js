@@ -38,12 +38,6 @@ app.use(session({
 
 /////ROUTING ALL THE PAGES 
 
-router.get('/test', (req, res) => {
-  const variableToDisplay = "Hello, world ! This Variable is Coming From Backend To Frontend !! - Hello, world! This Variable is Coming From Backend To Frontend !! - Hello, world! This Variable is Coming From Backend To Frontend !! - Hello, world! This Variable is Coming From Backend To Frontend !!" ;
-  res.render('test', { variableToDisplay });
-});
-
-
 router.get("/" , (req, res) => {
   if (req.session.loggedIn) {
     // user is already logged in, redirect to home page
@@ -52,7 +46,6 @@ router.get("/" , (req, res) => {
     // user is not logged in, show login page
     res.render('home')
 }
-  
 });
 
 router.get("/login", (req, res,next) => {
@@ -62,8 +55,7 @@ router.get("/login", (req, res,next) => {
 } else {
     // user is not logged in, show login page
     res.render('login', { message: '', messageType: 'null' })
-}
-  
+} 
 });
 
 router.get("/signup", (req, res,next) => {
@@ -73,8 +65,7 @@ router.get("/signup", (req, res,next) => {
 } else {
     // user is not logged in, show login page
     res.render('signup', { message: '', messageType: 'null' })
-}
-  
+} 
 });
 
 
@@ -86,8 +77,7 @@ router.get('/home', (req, res, next) => {
 } else {
     // user is not logged in, show login page
     res.redirect('/login')
-}
-  
+} 
 });
 
 router.get("/contact", (req, res,next) => {
@@ -97,8 +87,7 @@ router.get("/contact", (req, res,next) => {
 } else {
     // user is not logged in, show login page
     res.redirect('/login')
-}
-  
+}  
 });
 
 router.get("/error-404", (req, res,next) => {
@@ -110,7 +99,7 @@ router.get("/thank-you", (req, res,next) => {
 });
 
 router.get("/verify-email", (req,res , next) =>{
-  res.render('verify-email', { message: '', messageType: 'null', email: userEmailshared_verificationcode })
+  res.render('verify-email', { message: '', messageType: 'null', email: userEmailshared_verificationcode})
 });
 
 router.get("/reset-link", (req, res, next) => {
@@ -273,7 +262,7 @@ router.post("/verify-email", async (req, res, next) => {
   const code = req.body.code.join(''); // concatenate the digits from the input fields
   const user = await Register.findOne({ verificationCode: code });
   if (!user) {
-    res.render('verify-email', { message: 'Invalid Verification Code ', messageType: 'error' })
+    res.render('verify-email', { message: 'Invalid Verification Code ', messageType: 'error',  email: userEmailshared_verificationcode})
     return;
   }
   user.is_verified = 1; //Update is_verified to 1
@@ -746,11 +735,7 @@ axios.post('http://127.0.0.1:5000/',data_model)
 
     });
   } 
-// if(summarized_variable){
-//   app.get('/getData', function(req, res) {
-//     res.send({ message: summarized_variable });
-//   });
-// }
+
 
 
       console.log("")
@@ -759,7 +744,7 @@ axios.post('http://127.0.0.1:5000/',data_model)
        }
   catch (error){
     console.log(error)
-      // res.render('welcome' , {message: 'First Upload The Document' , messageType: 'error'});
+      res.render('welcome' , {message: 'First Upload The Document' , messageType: 'error'});
   }
 })
 
@@ -812,52 +797,6 @@ router.post('/upload', upload.single('file'), async (req, res) => {
   await document.save();
 
 
-// //Get file extension
-//   const extension = req.file.originalname.split('.').pop().toLowerCase();
-//   const filePath = path.join(__dirname, '../../Documents', req.file.filename);
-
-//   if (extension === 'pdf') {
-    
-
-//      let pdfText = '';
-
-//     pdfUtil.pdfToText(filePath, (err, data) => {
-//       if (err) {
-//         throw err;
-//       }
-//       pdfText = data;
-//       console.log(pdfText);
-
-//       // usePdfText();
-//     });
-
-//     function usePdfText() {
-//       console.log(pdfText);
-//     }
-//   } else if (extension === 'docx' || extension === 'doc') {
-    
-//     // create an instance of the WordExtractor
-//     const extractor = new WordExtractor();
-
-//     // use the extract method of the WordExtractor instance to extract the text from the docx file
-//     const extracted = extractor.extract(filePath);
-
-//     // handle the promise returned by the extract method and save the extracted text to a variable
-//     extracted.then(function(doc) {
-//       const extractedText = doc.getBody();
-//       console.log(extractedText);
-//       // use the extractedText variable here or pass it to another function
-//     }).catch(function(err){
-//       console.log('Error: ', err);
-//     });
-//   } else if (extension === 'txt') {
-//     fs.readFile(filePath, 'utf-8', function (err, data) {
-//       if (err) return next(err);
-//       console.log(data);
-//     });
-//   } 
-
-
   shared_id = ''+document._id;
   console.log("Document Successfully Uploaded In Database");
   console.log('')
@@ -865,26 +804,6 @@ router.post('/upload', upload.single('file'), async (req, res) => {
   res.sendStatus(200);
 }
 });
-
-
-//////////////AXIOS////////////////
-
-
-// const data = {
-//   text: "Stoicism is a school of Hellenistic philosophy founded by Zeno of Citium in Athens in the early 3rd century BCE. It is a philosophy of personal virtue ethics informed by its system of logic and its views on the natural world, asserting that the practice of virtue is both necessary and sufficient to achieve eudaimonia (happiness, lit. 'good spiritedness'): one flourishes by living an ethical life. The Stoics identified the path to eudaimonia with a life spent practicing virtue and living in accordance with nature.Alongside Aristotelian ethics, the Stoic tradition forms one of the major founding approaches to virtue ethics.[1] The Stoics are especially known for teaching that virtue is the only good for human beings, and that external things, such as health, wealth, and pleasure, are not good or bad in themselves (adiaphora) but have value as material for virtue to act upon. Many Stoics—such as Seneca and Epictetus—emphasized that because virtue is sufficient for happiness, a sage would be emotionally resilient to misfortune. The Stoics also held that certain destructive emotions resulted from errors of judgment, and they believed people should aim to maintain a will (called prohairesis) that is in accordance with nature. Because of this, the Stoics thought the best indication of an individual's philosophy was not what a person said but how a person behaved.[2] To live a good life, one had to understand the rules of the natural order since they believed everything was rooted in nature.",
-
-//   question: "When was Stoicism started? "
-
-// };
-
-// axios.post('http://127.0.0.1:5000/', data)
-//   .then(response => {
-//     console.log(response.data);
-//   })
-//   .catch(error => {
-//     console.error("Failure " + error);
-//   });
-
 
 
 //***************************STRATEGIES***************************** */
