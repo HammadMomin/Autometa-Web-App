@@ -7,7 +7,9 @@ const multer = require('multer');
 const axios = require('axios');
 
 const fs = require('fs');
-const pdfUtil = require('pdf-to-text');
+// const pdfUtil = require('pdf-to-text');
+// const { PDFDocument } = require('pdf-lib');
+const pdfparse = require('pdf-parse');
 const WordExtractor = require("word-extractor");
 
 const Register = require("../models/register");
@@ -614,18 +616,23 @@ router.post("/home", async (req, res) => {
   //Get file extension
   const extension = document_database.originalname.split('.').pop().toLowerCase();
   const filePath = path.join(__dirname, '../../Documents', document_database.filename);
+ 
 
  /////////FOR PDF FILES ////////////////
   if (extension === 'pdf') {
+
+    const pdffile = fs.readFileSync(filePath);
+    pdfparse(pdffile).then(function(data){
+      // console.log(data.numpages);
+
+      // console.log(data.info)
+
+      // console.log(data.text);
     
+
      let pdfText = '';
 
-    pdfUtil.pdfToText(filePath, (err, data) => {
-      if (err) {
-        throw err;
-      }
-      pdfText = data;
-      // console.log(pdfText);
+  pdfText = data.text;
 
 //////////////// axios request for pdf 
 
@@ -654,12 +661,9 @@ router.post("/home", async (req, res) => {
         });
 
 
+      })
+  
 
-    });
-
-    // function usePdfText() {
-    //   console.log(pdfText);
-    // }
   } 
   /////////FOR WORD FILES ////////////////
   else if (extension === 'docx' || extension === 'doc') {
