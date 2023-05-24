@@ -7,8 +7,6 @@ const multer = require('multer');
 const axios = require('axios');
 
 const fs = require('fs');
-// const pdfUtil = require('pdf-to-text');
-// const { PDFDocument } = require('pdf-lib');
 const pdfparse = require('pdf-parse');
 const WordExtractor = require("word-extractor");
 
@@ -269,7 +267,7 @@ router.post("/verify-email", async (req, res, next) => {
   }
   user.is_verified = 1; //Update is_verified to 1
   await user.save();
-
+  // res.render('verify-email', { message: 'Success ', messageType: 'success',  email: userEmailshared_verificationcode})
   res.redirect('/login');
 })
 
@@ -623,13 +621,7 @@ router.post("/home", async (req, res) => {
 
     const pdffile = fs.readFileSync(filePath);
     pdfparse(pdffile).then(function(data){
-      // console.log(data.numpages);
-
-      // console.log(data.info)
-
-      // console.log(data.text);
-    
-
+     
      let pdfText = '';
 
   pdfText = data.text;
@@ -735,12 +727,8 @@ axios.post('http://127.0.0.1:5000/',data_model)
   .catch(error => {
     console.error("Failure " + error);
   });
-
-
     });
   } 
-
-
 
       console.log("")
       console.log("Query Fired And Saved in Database");
@@ -751,12 +739,6 @@ axios.post('http://127.0.0.1:5000/',data_model)
       res.render('welcome' , {message: 'First Upload The Document' , messageType: 'error'});
   }
 })
-
-
-
-
-
-
 
 //*******************LIRARIES************************ */
 
